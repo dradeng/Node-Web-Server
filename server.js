@@ -28,9 +28,9 @@ app.use((req, res, next) => {
 });
 
 
-app.use((req,res,next) => {
-  res.render('maintenance.hbs')
-});
+//app.use((req,res,next) => {
+//  res.render('maintenance.hbs')
+//});
 
 hbs.registerHelper('screamIt', (text) => {
   return text.toUpperCase();
@@ -48,6 +48,12 @@ app.get('/about', (req, res) => {
   res.render('about.hbs', {
     pageTitle: 'About Page',
     currentYear: new Date().getFullYear()
+  });
+});
+
+app.get('/projects', (req, res) => {
+  res.render('projects.hbs', {
+    pageTitle: 'About Page'
   });
 });
 
